@@ -65,3 +65,71 @@
     background: #DAA520;
     color: #000;
 }
+
+/* frontend/src/styles/vitrine.css - ESTILO PREMIUM TZAD */
+
+.grid-produtos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas no mobile igual às fotos */
+    gap: 15px;
+    padding: 15px;
+}
+
+.card-premium {
+    background: #050505;
+    border: 1px solid #1a1a1a;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* Efeito de Zoom na Imagem */
+.img-container {
+    width: 100%;
+    aspect-ratio: 1/1;
+    overflow: hidden;
+    background: #000;
+}
+
+.img-produto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease; /* O segredo do Zoom suave */
+}
+
+.card-premium:hover .img-produto {
+    transform: scale(1.1); /* Zoom de 10% */
+    filter: brightness(1.1);
+}
+
+.info-produto {
+    padding: 12px;
+    text-align: center;
+}
+
+.preco-tag {
+    color: #DAA520;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin: 8px 0;
+}
+
+.btn-add-carrinho {
+    background: transparent;
+    border: 1px solid #DAA520;
+    color: #DAA520;
+    width: 100%;
+    padding: 8px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-add-carrinho:hover {
+    background: #DAA520;
+    color: #000;
+}
