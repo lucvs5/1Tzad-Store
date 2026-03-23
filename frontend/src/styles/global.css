@@ -1,0 +1,56 @@
+/* ESTILO GLOBAL - TZAD STORE */
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header-pro {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    border-bottom: 1px solid #DAA520; /* Linha Dourada */
+}
+
+.logo-texto {
+    color: #DAA520;
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 2px;
+}
+
+.vitrine-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* 2 colunas no celular */
+    gap: 15px;
+    padding: 15px;
+}
+
+.card-luxo {
+    background: #0a0a0a;
+    border: 1px solid #1a1a1a;
+    border-radius: 15px;
+    padding: 10px;
+    position: relative;
+}
+
+.tag-promo {
+    position: absolute;
+    background: #DAA520;
+    color: #000;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 2px 8px;
+    border-radius: 5px;
+    top: 10px; left: 10px;
+}
+
+.card-luxo img { width: 100%; border-radius: 10px; }
+.card-luxo button {
+    background: #DAA520;
+    width: 100%;
+    border: none;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 10px;
+}
