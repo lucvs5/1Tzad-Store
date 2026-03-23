@@ -60,4 +60,73 @@ const UserModal = ({ isOpen, onClose }) => {
     );
 };
 
+    // frontend/src/components/UserModal.js - PORTUGUÊS BRASIL
+import React, { useState } from 'react';
+import '../styles/modal.css';
+
+const UserModal = ({ isOpen, fechar }) => {
+    const [aba, setAba] = useState('carrinho');
+
+    if (!isOpen) return null;
+
+    return (
+        <div className="modal-overlay" style={{ display: 'flex' }} onClick={fechar}>
+            <div className="modal-content" onClick={e => e.stopPropagation()}>
+                
+                {/* Perfil e Boas Vindas */}
+                <div className="user-header">
+                    <img src="img/perfil-icon.png" className="user-avatar" alt="User" />
+                    <div>
+                        <p style={{ fontSize: '12px', color: '#888' }}>Bem-vindo,</p>
+                        <p style={{ fontWeight: 'bold' }}>CLIENTE TZAD</p>
+                    </div>
+                </div>
+
+                {/* Navegação entre as abas do projeto antigo */}
+                <nav className="modal-nav">
+                    {['CARRINHO', 'ENDEREÇOS', 'MENSAGENS', 'RASTREAR', 'PERFIL'].map(item => (
+                        <button 
+                            key={item}
+                            className={`nav-tab ${aba === item.toLowerCase() ? 'active' : ''}`}
+                            onClick={() => setAba(item.toLowerCase())}
+                        >
+                            {item}
+                        </button>
+                    ))}
+                </nav>
+
+                {/* Área Dinâmica */}
+                <div className="tab-pane">
+                    
+                    {aba === 'carrinho' && (
+                        <div id="aba-carrinho">
+                            {/* Lista de Itens aqui */}
+                            <p style={{ textAlign: 'center', color: '#444' }}>Seu carrinho está vazio.</p>
+                            <button className="btn-finalizar">FINALIZAR PEDIDO</button>
+                        </div>
+                    )}
+
+                    {aba === 'enderecos' && (
+                        <div id="aba-enderecos">
+                            <p className="label-tzad">MEUS ENDEREÇOS</p>
+                            {/* Formulário de Endereço idêntico ao original */}
+                        </div>
+                    )}
+
+                    {aba === 'mensagens' && (
+                        <div id="aba-mensagens">
+                            <div className="chat-box">
+                                <p style={{ fontSize: '11px', color: '#DAA520' }}>TZAD BOT:</p>
+                                <p style={{ background: '#111', padding: '10px', borderRadius: '5px' }}>
+                                    Olá! Suas atualizações de pedido aparecerão aqui.
+                                </p>
+                            </div>
+                        </div>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
 export default UserModal;
