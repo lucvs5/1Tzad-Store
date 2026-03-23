@@ -53,3 +53,98 @@
     border: none;
     cursor: pointer;
 }
+
+/* Efeito de desfoque no fundo quando o modal abre */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: none; /* Controlado pelo JS */
+    justify-content: flex-end;
+    z-index: 9999;
+}
+
+/* Conteúdo do Modal - Desliza da direita */
+.modal-content {
+    width: 85%;
+    max-width: 420px;
+    height: 100%;
+    background: #000000;
+    border-left: 2px solid #DAA520;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+/* Cabeçalho do Usuário */
+.user-header {
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: #0a0a0a;
+}
+
+.user-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #DAA520;
+}
+
+/* Menu de Abas (Navegação Superior do Modal) */
+.modal-nav {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #1a1a1a;
+    padding: 0 10px;
+}
+
+.modal-nav::-webkit-scrollbar { display: none; }
+
+.nav-tab {
+    padding: 15px 20px;
+    background: none;
+    border: none;
+    color: #555;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.nav-tab.active {
+    color: #DAA520;
+    border-bottom: 2px solid #DAA520;
+}
+
+/* Área de Conteúdo das Abas */
+.tab-pane {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Botão de Finalizar estilo Tzad */
+.btn-finalizar {
+    background: #DAA520;
+    color: #000;
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    cursor: pointer;
+}
