@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tzad Store | Premium Streetwear</title>
+    <link rel="stylesheet" href="frontend/src/styles/global.css">
+    <link rel="stylesheet" href="frontend/src/styles/modal.css">
+    <link rel="stylesheet" href="frontend/src/styles/vitrine.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS de emergência para garantir o fundo preto e dourado agora */
+        body { background: #000; color: #fff; margin: 0; font-family: 'Poppins', sans-serif; }
+        .topo-fixo { display: flex; justify-content: space-between; padding: 15px; border-bottom: 1px solid #DAA520; align-items: center; background: #000; position: sticky; top: 0; z-index: 1000; }
+        .logo-tzad { color: #DAA520; font-family: 'Playfair Display', serif; font-size: 20px; font-weight: bold; text-decoration: none; }
+        .btn-abrir-painel { background: none; border: none; font-size: 24px; cursor: pointer; color: #DAA520; }
+        .banner-principal { height: 200px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('frontend/public/img/banner.jpg'); background-size: cover; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 1px solid #1a1a1a; }
+        .categorias-bar { display: flex; overflow-x: auto; gap: 15px; padding: 15px; background: #0a0a0a; border-bottom: 1px solid #1a1a1a; }
+        .cat-item { color: #888; text-decoration: none; font-size: 11px; font-weight: bold; white-space: nowrap; transition: 0.3s; }
+        .cat-item:hover { color: #DAA520; }
+    </style>
+</head>
+<body>
+
+    <header class="topo-fixo">
+        <div style="font-size: 20px;">☰</div>
+        <a href="#" class="logo-tzad">TZAD STORE</a>
+        <button class="btn-abrir-painel" onclick="toggleModal()">🛒</button>
+    </header>
+
+    <section class="banner-principal">
+        <div>
+            <h1 style="font-size: 22px; letter-spacing: 2px;">QUALIDADE PREMIUM</h1>
+            <p style="font-size: 10px; color: #DAA520;">IMPORTADOS SELECIONADOS</p>
+        </div>
+    </section>
+
+    <nav class="categorias-bar">
+        <a href="#" class="cat-item">PROMOÇÕES</a>
+        <a href="#" class="cat-item">NOCTA</a>
+        <a href="#" class="cat-item">STUSSY</a>
+        <a href="#" class="cat-item">BAPE</a>
+        <a href="#" class="cat-item">NIKE</a>
+        <a href="#" class="cat-item">ACESSÓRIOS</a>
+    </nav>
+
+    <main id="app-vitrine" class="grid-produtos">
+        <p style="text-align: center; padding: 50px; color: #444;">Carregando produtos...</p>
+    </main>
+
+    <div id="meuModal" class="modal-overlay" style="display: none;">
+        </div>
+
+    <script>
+        // Função simples para abrir/fechar o Painel (UserModal)
+        function toggleModal() {
+            const modal = document.getElementById('meuModal');
+            modal.style.display = modal.style.display === 'none' ? 'flex' : 'none';
+        }
+
+        // Simulação de carregamento da Vitrine
+        window.onload = () => {
+            console.log("Tzad Store carregada com sucesso.");
+        };
+    </script>
+</body>
+</html>
